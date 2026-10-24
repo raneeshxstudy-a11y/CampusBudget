@@ -4,13 +4,13 @@ CampusBudget is a MERN student budget and expense tracker. Each registered user 
 
 ## Project status
 
-The client builds and the initial backend tests pass. Connecting a real MongoDB Atlas database, checking the full browser journey, publishing to GitHub, and deployment are the remaining submission steps. Add the final URLs and screenshots here after those checks.
+The client builds, five backend tests pass, and Atlas-backed integration checks passed. The project is published at https://github.com/raneeshxstudy-a11y/CampusBudget and deployed at https://campusbudget-jztx.onrender.com. Live browser checks passed registration, budget save, expense creation, editing, deletion, search, dashboard totals, and budget-card navigation. Final mobile/keyboard review and screenshots remain.
 
 ## Stack and structure
 
 - `client/`: React and Vite. Pages use `services/` for all API requests, `context/` for shared login state, and `hooks/` for reusable React logic.
 - `server/`: Node.js, Express, Mongoose, authentication and validation middleware, routes, controllers, and models.
-- `docs/`: separate SRS and project report. The report must be updated with actual deployment and testing results before submission.
+- `docs/`: separate SRS and project report. The report records the GitHub and Render URLs and actual live test results.
 
 React sends HTTP requests to Express. Express checks the user's session and input, then uses Mongoose to access MongoDB. The browser never connects to MongoDB directly.
 
@@ -56,7 +56,7 @@ Amounts are stored as integer paise to avoid rounding errors. The UI displays ru
 
 ## Checks
 
-From `server/`, run `npm test`. From `client/`, run `npm run build`. Before submission, also test registration, login, budget save, expense create/edit/delete, filters, pagination, ownership, errors, mobile layout, and the production URL. Record the actual results in `docs/CampusBudget_Project_Report.docx`.
+From `server/`, run `npm test`. From `client/`, run `npm run build`. Live registration, budget save, expense create/edit/delete, search, dashboard totals, and budget-card navigation passed. Atlas integration covered filters and ownership. Before submission, complete mobile, keyboard, and UI pagination review. Results are recorded in `docs/CampusBudget_Project_Report.docx`.
 
 ## Publish with VS Code
 
@@ -64,10 +64,10 @@ Open **Source Control** in VS Code, initialize the repository in the `CampusBudg
 
 ## Deployment
 
-Build the client with `npm run build` in `client/`. In production, the Express server serves `client/dist` along with the API, so the browser and API use one origin. Configure `MONGODB_URI`, `JWT_SECRET`, `NODE_ENV=production`, and `PORT` on a Node-capable host. Do not upload local `.env` files. Use HTTPS, check the host's logs, verify `GET /api/health`, and run every core flow on the live URL. Add the final URL here.
+Build the client with `npm run build` in `client/`. In production, the Express server serves `client/dist` along with the API, so the browser and API use one origin. Configure `MONGODB_URI`, `JWT_SECRET`, `NODE_ENV=production`, and `PORT` on a Node-capable host. Do not upload local `.env` files. Use HTTPS, check the host's logs, verify `GET /api/health`, and run every core flow on the live URL. Live URL: https://campusbudget-jztx.onrender.com.
 
 ## Known limitations and later ideas
 
 - The current scope supports a single monthly total budget, not separate limits for each category.
 - Expenses are manually entered; bank integrations and recurring transactions are future ideas.
-- Atlas API integration checks passed on 24 October 2026. Browser registration, budget save, expense creation, and dashboard totals passed. Remaining browser and deployment checks are pending.
+- Atlas API integration checks passed on 24 October 2026. Live registration, budget save, expense create/edit/delete, search, dashboard totals, and budget-card navigation passed on Render. Mobile, keyboard, and UI pagination review remain.
